@@ -1,0 +1,93 @@
+    1  ls
+    2  git clone https://github.com/amitvashisttech/docker-k8s-ericsson-07Oct2020.git
+    3  ls
+    4  cd docker-k8s-ericsson-07Oct2020/
+    5  ls
+    6  mkdir 01-Docker
+    7  ls
+    8  cd 01-Docker/
+    9  ls
+   10  vim README.md
+   11  cd ..
+   12  ls
+   13  git add . ; git commit -m "01-Docker"; git push 
+   14  ls
+   15  git config --list 
+   16  ls
+   17  cd 01-Docker/ls
+   18  cd 01-Docker/
+   19  ls
+   20  mkdir 01-Setup 
+   21  cd 01-Setup/
+   22  ls
+   23  vim docker-install.sh 
+   24  ;;s
+   25  chmod +x docker-install.sh 
+   26  ./docker-install.sh 
+   27  ls
+   28  docker version 
+   29  ls
+   30  vim docker-install.sh 
+   31  ls
+   32  cd ..
+   33  ls
+   34  cd ..
+   35  ls
+   36  git add . ; git commit -m "01-Docker"; git push 
+   37  ls
+   38  cd 01-Docker/01-Setup/
+   39  ls
+   40  cd ..
+   41  ls
+   42  cd ..
+   43  ls
+   44  cd 
+   45  docker version 
+   46  ls
+   47  docker run -it ubuntu /bin/bash
+   48  docker image s
+   49  docker images
+   50  docker ps 
+   51  ls
+   52  cd docker-k8s-ericsson-07Oct2020/
+   53  ls
+   54  cd 01-Docker/
+   55  ls
+   56  mkdir 02-Dockerfile/apache -p 
+   57  cd 02-Dockerfile/
+   58  ls
+   59  cd apache/
+   60  ls
+   61  vim Dockerfile
+   62  ls
+   63  cat Dockerfile 
+   64  docker build -t myapache:v1 .
+   65  ls
+   66  docker images 
+   67  docker run -d myapache:v1
+   68  docker ps 
+   69  docker ps -a 
+   70  la
+   71  vim Dockerfile 
+   72  docker build -t myapache:v1 .
+   73  docker run -d myapache:v1
+   74  docker ps
+   75  docker inspect e884c84b0168
+   76  curl 172.17.0.3
+   77  ls
+   78  vim hello.html
+   79  ls
+   80  vim Dockerfile 
+   81  ls
+   82  docker build -t myapache:v2 .
+   83  ls
+   84  docker images 
+   85  docker ps 
+   86  docker run -d myapache:v2
+   87  docker ps 
+   88  curl 172.17.0.4/hello.html 
+   89  cd ..
+   90  ls
+   91  cd ..
+   92  ls
+   93  history > Day0.5_History.txt

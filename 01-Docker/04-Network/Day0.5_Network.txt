@@ -66,3 +66,94 @@
    66  cd 04-Network/
    67  ls
    68  history > Day0.5_Network.txt
+   69  cd ..
+   70  ls
+   71  cd ..
+   72  ls
+   73  git add . ; git commit -m "Day0.5_Network.txt"; git push 
+   74  ls
+   75  cd 
+   76  ls
+   77  cd - 
+   78  cd ..
+   79  ls
+   80  cd docker-k8s-ericsson-07Oct2020/
+   81  ls
+   82  docker network ls 
+   83  docker network create my-net --help
+   84  docker network create --driver=bridge --subnet=172.28.0.0/16 --ip-range=172.28.5.0/24 --gateway 172.28.0.254 mybr0
+   85  docker network ls 
+   86  docker network inspect mybr0               
+   87  docker run -d --name test-mybr0-01 --network mybr0 -P myapache:v3
+   88  docker run -d --name test-mybr0-02 --network mybr0 -P myapache:v3
+   89  docker ps 
+   90  docker network inspect mybr0               
+   91  docker ps 
+   92  docker run -d --name test-mybr0-03 --network mybr0 -p 8090:80 myapache:v3
+   93  docker network ls 
+   94  docker run -d --name no-if-container --network none myapache:v3
+   95  docker ps 
+   96  docker exec no-if-container ip addr 
+   97  docker exec test-mybr0-03 ip addr
+   98  docker network ls 
+   99  docker network inspect 5ef8f28a6d15        
+  100  docker network ls 
+  101  docker network inspect 868fc45ec16a        
+  102  ls
+  103  cd 01-Docker/04-Network/apache/
+  104  ls
+  105  vim hello.html 
+  106  ls
+  107  docker build -t myapache:v4 .
+  108  ls
+  109  docker run -d --name test-host-nw-01 --network host -P myapache:v4
+  110  docker ps 
+  111  docker network inspect 868fc45ec16a        
+  112  ls
+  113  docker exec test-host-nw-01 ip addr
+  114  ls
+  115  cd ..
+  116  ls
+  117  cd ..
+  118  ls
+  119  cd ..
+  120  ls
+  121  ip adr 
+  122  ip addr 
+  123  docker ps -aq 
+  124  docker kill $(docker ps -aq)
+  125  docker rm $(docker ps -aq)
+  126  docker ps 
+  127  ip addr 
+  128  ls
+  129  ip netns 
+  130  docker run -d --name test-01 -P myapache:v4
+  131  ip addr 
+  132  docker exec test-01 ip addr
+  133  ip netns 
+  134  ln -s /var/run/docker/netns /var/run/netns
+  135  ip netns 
+  136  ip netns list 
+  137  ip netns exec 3f790601c80a ip addr 
+  138  ip netns exec 3f790601c80a ip link
+  139  docker run -d --name test-02 -P myapache:v4
+  140  ip addr 
+  141  docker exec test-02 ip addr
+  142  ip netns list 
+  143  ip netns exec 6b7b0a3e1b10  ip link
+  144  ip netns exec 6b7b0a3e1b10  ip addr 
+  145  apt-get install bridge-utils -y 
+  146  brctl show
+  147  ip netns list 
+  148  ip addr 
+  149  docker run -d --name test-03 --network mybr0  -P myapache:v4
+  150  ip addr 
+  151  brctl show
+  152  ls
+  153  cd 01-Docker/
+  154  ls
+  155  cd 04-Network/
+  156  ls
+  157  history 
+  158  ls
+  159  history > Day0.5_Network.txt 

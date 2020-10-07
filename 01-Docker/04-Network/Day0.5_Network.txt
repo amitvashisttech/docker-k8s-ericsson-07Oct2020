@@ -1,0 +1,68 @@
+    1  ls
+    2  docker images 
+    3  docker ps 
+    4  docker kill  $(docker ps -aq) 
+    5  docker rm  $(docker ps -aq) 
+    6  ls
+    7  docker ps -a 
+    8  docker images 
+    9  docker run -d myapache:v2
+   10  docker ps 
+   11  docker inspect 5e39ac574214
+   12  ip addr 
+   13  docker network ls 
+   14  docker network inspect 65bbfa43dc2d
+   15  docker run -d --name test-01 myapache:v2
+   16  docker ps 
+   17  docker network ls 
+   18  docker network inspect 65bbfa43dc2d
+   19  docker ps 
+   20  docker kill  unruffled_gagarin
+   21  docker run -d --name test-02 myapache:v2
+   22  docker network inspect 65bbfa43dc2d
+   23  docker run -d --name test-03 myapache:v2
+   24  docker network inspect 65bbfa43dc2d
+   25  ls
+   26  docker ps 
+   27  curl 172.17.0.2/hello.html
+   28  apt-get install net-tools -y 
+   29  apt-get update; apt-get install net-tools -y 
+   30  netstat -tulnp 
+   31  curl 172.17.0.2/hello.html
+   32  curl 172.17.0.3/hello.html
+   33  curl 172.17.0.4/hello.html
+   34  ip addr 
+   35  netstat -tulnp 
+   36  docker run -d --name test-04 -p 8080:80 myapache:v2
+   37  docker ps 
+   38  netstat -tulnp 
+   39  iptables -L | grep -i docker
+   40  iptables -L 
+   41  ls
+   42  docker run -d --name test-05 -p 8080:80 myapache:v2
+   43  docker run -d --name test-06 -p 8081:80 myapache:v2
+   44  docker run -d --name test-07 -P myapache:v2
+   45  docker ps 
+   46  ls
+   47  cd 04-Network/
+   48  ls
+   49  cp -rf ../03-Volumes/apache . 
+   50  ls
+   51  cd apache/
+   52  ls
+   53  vim Dockerfile 
+   54  ls
+   55  vim hello.html 
+   56  ls
+   57  docker images 
+   58  docker build -t myapache:v3 .
+   59  docker run -d --name test-08 -P myapache:v3
+   60  docker ps 
+   61  ls
+   62  cd ..
+   63  ls
+   64  cd ..
+   65  ls
+   66  cd 04-Network/
+   67  ls
+   68  history > Day0.5_Network.txt

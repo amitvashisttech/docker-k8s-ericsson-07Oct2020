@@ -138,3 +138,69 @@
   138  cd 06-Deployments/
   139  ls
   140  history > README.md
+  141  cd ..
+  142  ls
+  143  cd ..
+  144  ls
+  145  git add . ; git commit -m "06-Deployments" ; git push 
+  146  kubectl descibe deployment 
+  147  kubectl describe deployment 
+  148  kubectl edit deployment 
+  149  ls
+  150  cd 02-K8s/
+  151  ls
+  152  cd 06-Deployments/
+  153  ls
+  154  cp -rf helloworld.yaml helloworld-v2.yaml 
+  155  vim helloworld-v2.yaml 
+  156  kubectl create -f helloworld-v2.yaml --dry-run 
+  157  kubectl create -f helloworld-v2.yaml 
+  158  kubectl get pods 
+  159  kubectl get rs 
+  160  kubectl describe rs helloworld-2-deployment-865b8b857d
+  161  kubectl get pods 
+  162  kubectl get deploy 
+  163  kubectl scale --replicas=20 helloworld-2-deployment
+  164  kubectl scale --replicas=20 deploy helloworld-2-deployment
+  165  kubectl get deploy 
+  166  kubectl describe rs helloworld-2-deployment-865b8b857d
+  167  ls
+  168  cp -rf helloworld-v2.yaml helloworld-v3.yaml
+  169  ls
+  170  vim helloworld-v3.yaml 
+  171  kubectl create -f helloworld-v3.yaml --dry-run 
+  172  kubectl create -f helloworld-v3.yaml 
+  173  kubectl get pods 
+  174  ls
+  175  kubectl delete -f helloworld.yaml 
+  176  kubectl delete -f helloworld-v2.yaml 
+  177  ls
+  178  kubectl get deploy,rs,pod
+  179  kubectl describe rs helloworld-3-deployment-549665d495
+  180  ls
+  181  kubectl get deploy,rs,pod
+  182  kubectl set image deployment helloworld-3-deployment k8s-demo=amitvashist7/k8s-tiny-web:2 --record
+  183  kubectl get pod 
+  184  watch -n .1 kubectl  get pods 
+  185  kubectl set image deployment helloworld-3-deployment k8s-demo=amitvashist7/k8s-tiny-web:3 --record
+  186  watch -n .1 kubectl  get pods 
+  187  ls
+  188  kubectl delete -f helloworld-v3.yaml 
+  189  kubectl create -f helloworld.yaml 
+  190  kubectl get deploy 
+  191  kubectl scale --replicas=30 deploy helloworld-deployment
+  192  kubectl get deploy 
+  193  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:2 --record
+  194  kubectl rollout pause deploy helloworld-deployment
+  195  kubectl get pods 
+  196  kubectl rollout resume deploy helloworld-deployment
+  197  kubectl get pods 
+  198  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:3 --record
+  199  kubectl rollout pause deploy helloworld-deployment
+  200  kubectl get pods 
+  201  kubectl rollout resume deploy helloworld-deployment
+  202  kubectl get pods 
+  203  l
+  204  kubectl delete -f helloworld.yaml 
+  205  ls
+  206  history > README.md 

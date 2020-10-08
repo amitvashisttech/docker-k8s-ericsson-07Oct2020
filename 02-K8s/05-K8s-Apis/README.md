@@ -37,3 +37,8 @@
    34  ls
    35  history > README.md
 ```
+
+## Exposing API Server to the outsider world via Proxy.
+```
+kubectl proxy --address="10.128.0.3" --port="8081" --accept-hosts="." --accept-paths="." &
+```

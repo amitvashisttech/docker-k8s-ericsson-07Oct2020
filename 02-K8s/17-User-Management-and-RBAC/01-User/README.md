@@ -6,6 +6,7 @@ sudo apt install openssl
 openssl genrsa -out amit.pem 2048
 openssl req -new -key amit.pem -out amit-csr.pem -subj "/CN=amit/O=training/"
 openssl x509 -req -in amit-csr.pem -CA /etc/kubernetes/pki/ca.crt -CAkey /etc/kubernetes/pki/ca.key -CAcreateserial -out amit.crt -days 10000
+openssl x509 -in amit.crt -text -noout
 ```
 
 ## Set Credentials in Kube Config

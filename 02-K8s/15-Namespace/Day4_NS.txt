@@ -1,0 +1,124 @@
+  600  mkdir 17-Namespaces
+  601  ls
+  602  mv 17-Namespaces /root/
+  603  cd 
+  604  ls
+  605  cd 17-Namespaces/
+  606  ls
+  607  vim namespace-defination.yaml
+  608  cat namespace-defination.yaml 
+  609  cd 
+  610  ls
+  611  git clone https://github.com/amitvashist7/kubernetes-project.git
+  612  ls
+  613  cd kubernetes-project/
+  614  ls
+  615  cd resourcequotas/
+  616  ls
+  617  cat helloworld-with-quotas.yml 
+  618  vim helloworld-with-quotas.yml 
+  619  cd
+  620  k
+  621  kubectl create ns myspace
+  622  kubectl get ns 
+  623  kubectl run nginx --image=nginx --namespace=myspace          
+  624  kubectl get pods 
+  625  kubectl get pods -n myspace
+  626  kubectl config set-context --current --namespace=myspace
+  627  kubectl get pods
+  628  kubectl config view --minify | grep namespace:
+  629  kubectl api-resources --namespaced=true
+  630  kubectl api-resources --namespaced=false
+  631  history 
+  632  kubectl config set-context --current --namespace=default
+  633  kubectl get pods 
+  634  kubectl config view --minify | grep namespace:
+  635  ls
+  636  rm 17-Namespaces/
+  637  ls
+  638  rm -rf 17-Namespaces/
+  639  ls
+  640  kubectl create sa --help 
+  641  kubectl create sa test 
+  642  kubectl get sa
+  643  kubectl describe  sa test 
+  644  kubectl describe  secret test 
+  645  kubectl auth can-i create deployments --help
+  646  kubectl auth can-i create deployments --as=test
+  647  kubectl auth can-i create deployments 
+  648  kubectl auth can-i create deployments --namespace=myspace --as=test
+  649  kubectl delete sa test 
+  650  ls
+  651  cd docker-k8s-ericsson-07Oct2020/
+  652  ls
+  653  cd 02-K8s/
+  654  ls
+  655  ll
+  656  mkdir 15-Namespace
+  657  ls
+  658  cd 15-Namespace/
+  659  ls
+  660  kubectl get ns 
+  661  kubectl delete  ns  myspace           
+  662  kubectl get ns 
+  663  kubectl create ns testnamespace
+  664  kubectl get ns 
+  665  kubectl create ns myspace --dry-run
+  666  kubectl create ns myspace --dry-run -o yaml
+  667  kubectl create ns myspace --dry-run -o yaml > namespace-defination.yaml
+  668  ls
+  669  cat namespace-defination.yaml 
+  670  vim namespace-defination.yaml 
+  671  kubectl create -f namespace-defination.yaml 
+  672  kubectl get ns 
+  673  kubectl get pods -n myspace           
+  674  kubectl get pods -n kube-system
+  675  ls
+  676  kubectl run nginx --images=nginx
+  677  kubectl run nginx --image=nginx
+  678  kubectl get pods 
+  679  kubectl run nginx --image=nginx -n myspace
+  680  kubectl get pods 
+  681  kubectl get pods -n myspace
+  682  ls
+  683  cp -rf ../06-Deployments/helloworld.yaml . 
+  684  ls
+  685  cat helloworld.yaml 
+  686  kubectl create -f helloworld.yaml -n myspace
+  687  kubectl get deploy 
+  688  kubectl get deploy -n myspace 
+  689  kubectl create -f helloworld.yaml -n myspace--dry-run -o yaml
+  690  kubectl create -f helloworld.yaml -n myspace  --dry-run -o yaml
+  691  kubectl create -f helloworld.yaml -n myspace  --dry-run -o yaml > helloworld-with-ns.yaml 
+  692  ls
+  693  kubectl get deploy -n myspace 
+  694  kubectl delete deploy helloworld-deployment -n myspace 
+  695  kubectl get deploy -n myspace 
+  696  ls
+  697  cat helloworld-with-ns.yaml 
+  698  kubectl create -f helloworld-with-ns.yaml 
+  699  kubectl get deploy 
+  700  kubectl get deploy -n myspace 
+  701  kubectl get pod 
+  702  kubectl get pod --all-namespaces
+  703  ls
+  704  kubectl get ns 
+  705  kubectl get pod 
+  706  kubectl config get-context
+  707  kubectl config --help 
+  708  kubectl config get-contexts
+  709  kubectl config set-context --current --namespace=myspace
+  710  kubectl config get-contexts
+  711  kubectl get pods 
+  712  kubectl config view 
+  713  kubectl config set-context --current --namespace=default
+  714  kubectl config view 
+  715  ls
+  716  kubectl api-resources
+  717  kubectl api-resources --namespaced=true
+  718  kubectl api-resources --namespaced=false
+  719  ls
+  720  cd ..
+  721  cd - 
+  722  history 
+  723  history > Day4_NS.txt

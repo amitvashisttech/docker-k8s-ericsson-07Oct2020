@@ -1,0 +1,4 @@
+   40  kubectl create clusterrolebinding add-on-cluster-admin   --clusterrole=cluster-admin   --serviceaccount=kube-system:default
+   41  kubectl create clusterrolebinding add-on-cluster-admin-1   --clusterrole=cluster-admin   --serviceaccount=default:default
+   58  history | grep -i cluster
+   59  history | grep -i cluster > cluster-role-binding.txt

@@ -1,0 +1,133 @@
+    1  wget wget https://storage.googleapis.com/kubernetes-helm/helm-v2.11.0-linux-amd64.tar.gz
+    2  tar -xzvf helm-v2.11.0-linux-amd64.tar.gz
+    3  sudo mv linux-amd64/helm /usr/local/bin/helm
+    4  ls
+    5  cd linux-amd64/
+    6  ls
+    7  cat README.md 
+    8  cd ..
+    9  ls
+   10  vim helm-rbac.yaml
+   11  ls
+   12  kubectl create -f helm-rbac.yaml
+   13  helm init --service-account tiller
+   14  cd
+   15  ls
+   16  helm init --service-account tiller
+   17  /usr/local/bin/helm init --service-account tiller
+   18  cd - 
+   19  ls
+   20  cd linux-amd64/
+   21  ls
+   22  cd
+   23  curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+   24  chmod 700 get_helm.sh
+   25  helm init --service-account tiller
+   26  ls
+   27  helm init --service-account tiller
+   28  helm --help
+   29  helm search redis
+   30  ls
+   31  cd docker-k8s-ericsson-07Oct2020/
+   32  ls
+   33  cd 02-K8s/
+   34  ls
+   35  cd 28-Helm/
+   36  ls
+   37  cd linux-amd64/
+   38  ls
+   39  helm init --service-account tiller
+   40  ls
+   41  cd ..
+   42  ls
+   43  tar -zxvf helm-v2.11.0-linux-amd64.tar.gz 
+   44  ls
+   45  cd linux-amd64/
+   46  ls
+   47  ./helm init --service-account tiller
+   48  helm search hub wordpress
+   49  helm install  wordpress 
+   50  helm install  wordpress my-wordpress
+   51  helm search hub wordpress
+   52  helm repo add wordpress https://hub.helm.sh/charts/bitnami/wordpress 
+   53  helm repo add brigade https://brigadecore.github.io/charts
+   54  helm search repo brigade
+   55  helm search repo kash
+   56  helm install happy-panda stable/mariadb
+   57  helm repo update
+   58  helm install happy-panda stable/mariadb
+   59  helm init --service-account tiller --override spec.selector.matchLabels.'name'='tiller',spec.selector.matc
+   60  hLabels.'app'='helm' --output yaml | sed 's@apiVersion: extensions/v1beta1@apiVersion: apps/v1@' | kubectl apply 
+   61  ls
+   62  cp -rf helm /usr/local/bin/
+   63  helm init --service-account tiller --override spec.selector.matchLabels.'name'='tiller',spec.selector.matchLabels.'app'='helm' --output yaml | sed 's@apiVersion: extensions/v1beta1@apiVersion: apps/v1@' | kubectl apply -f -
+   64  ls
+   65  cd 
+   66  ls
+   67  helm search wordpress
+   68  helm install stable/wordpress --name mywordpress
+   69  kubectl get svc 
+   70  kubectl get secret --namespace default mywordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode
+   71  ls
+   72  helm  --help 
+   73  ls
+   74  cd docker-k8s-ericsson-07Oct2020/
+   75  ls
+   76  cd 02-K8s/
+   77  ls
+   78  cd 28-Helm/
+   79  ls
+   80  rm -rf helm-v2.11.0-linux-amd64.tar.gz 
+   81  ls
+   82  rm -rf linux-amd64 
+   83  ls
+   84  vim README.md
+   85  ls
+   86  helm create mychart
+   87  ls
+   88  cd mychart/
+   89  ls
+   90  cat Chart.yaml 
+   91  cat values.yaml 
+   92  ls
+   93  cd ..
+   94  ls
+   95  helm install --dry-run --debug ./mychart
+   96  ls
+   97  cd mychart/
+   98  ls
+   99  cd charts/
+  100  ls
+  101  cd ..
+  102  ls
+  103  cd templates/
+  104  ls
+  105  vim deployment.yaml 
+  106  sl
+  107  helm install --dry-run --debug ./mychart
+  108  cd ../
+  109  ls
+  110  cd ..
+  111  ks
+  112  ls
+  113  helm install --dry-run --debug ./mychart
+  114  helm install --dry-run --debug ./mychart --set service.internalPort=8080
+  115  helm install --dry-run --debug ./mychart
+  116  helm install example ./mychart --set service.type=NodePort
+  117  helm install --name example ./mychart --set service.type=NodePort
+  118  kubectl get pods 
+  119  helm install --name nginx-example ./mychart --set service.type=Loadbalancer
+  120  helm install --name nginx-example ./mychart --set service.type=LoadBalancer
+  121  helm install --name nginx-example-2 ./mychart --set service.type=LoadBalancer
+  122  kubectl  get pods 
+  123  kubectl  get svc 
+  124  helm remove --name nginx-example-2 ./mychart -
+  125  helm delete --name nginx-example-2 ./mychart -
+  126  helm delete --name nginx-example-2 
+  127  helm delete nginx-example-2 
+  128  kubectl get pods 
+  129  kubectl get svc 
+  130  helm delete mywordpress
+  131  kubectl get svc 
+  132  ls
+  133  history > Helm.txt

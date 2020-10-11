@@ -1,0 +1,22 @@
+  129  apt-get install nfs-kernel-server -y 
+  130  ls
+  131  mkdir /exports; chown nobody:nogroup /exports
+  132  vi /etc/exports 
+  133  ls
+  134  systemctl restart nfs-kernel-server
+  135  systemctl status nfs-kernel-server
+  136  showmount -e localhost
+  137  ls
+  138  cd 
+  139  cd - 
+  140  cat /exports/Hello.txt 
+  141  ls
+  142  cat /exports/Hello.txt 
+  143  ls
+  144  history > NFS-Server-Setup.txt
+
+# On Clinet / Worker
+
+    7  apt-get install nfs-common -y 
+    8  mkdir /testnfs
+    9  mount -t nfs 10.128.0.3:/exports /testnfs/

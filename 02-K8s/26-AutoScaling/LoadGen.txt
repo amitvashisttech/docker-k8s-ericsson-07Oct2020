@@ -1,0 +1,5 @@
+kubectl run -i --tty load-genrater --image=busybox /bin/sh
+wget http://hpa-example.default.svc.cluster.local:31001
+or 
+wget http://routeable-IP:31001
+while true; do wget -q -O- http://hpa-example.default.svc.cluster.local:31001; done
